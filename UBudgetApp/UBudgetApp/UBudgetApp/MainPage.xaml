@@ -7,10 +7,7 @@
              x:Class="UBudgetApp.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <Button Text="Add Expense" Clicked="OnAddExpense_Clicked" />
     </StackLayout>
 
 </ContentPage>
