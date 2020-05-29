@@ -2,14 +2,46 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:local="clr-namespace:UBudgetApp"
              mc:Ignorable="d"
              x:Class="UBudgetApp.ExpenseListPage">
+
+    <ContentPage.BindingContext>
+        <local:ExpenseListViewModel>
+            
+        </local:ExpenseListViewModel>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Add Expense"/>
+            <Button Text="Add Expense"  Clicked="AddExpenseButtonClicked"/>
             
-            <ListView x:Name="lvExpenses" ></ListView>
+            <ListView Margin="0,50,50,50" ItemsSource="{Binding Expenses}" >
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Name}" 
+                                       Grid.Column="0"
+                                       FontSize="Medium"
+                                       FontAttributes="Bold"
+                                       VerticalTextAlignment="Start"></Label>
+                                <Label Text="{Binding Amount,StringFormat='${0}'}" 
+                                       FontSize="Medium"
+                                       Grid.Column="1"
+                                       FontAttributes="Bold"
+                                       VerticalTextAlignment="Start"></Label>
+                                
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
