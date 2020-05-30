@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UBudgetApp.Model;
 using Xamarin.Forms;
 
 namespace UBudgetApp
@@ -17,14 +16,6 @@ namespace UBudgetApp
         public MainPage()
         {
             InitializeComponent();
-        }
-
-        private async void OnAddExpense_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new AddExpense
-            {
-                BindingContext = new Expense()
-            });
         }
     }
 }

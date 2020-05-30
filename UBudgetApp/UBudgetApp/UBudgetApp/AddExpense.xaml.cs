@@ -16,14 +16,19 @@ namespace UBudgetApp
         {
             InitializeComponent();
         }
-        private async void OnSaveButtonClicked(object sender, EventArgs e)
+        private void OnSaveButtonClicked(object sender, EventArgs e)
         {
-            await Navigation.PopModalAsync();
+            //Navigation.PopModalAsync();
+
+
         }
 
-        private async void OnCancelButtonClicked(object sender, EventArgs e)
+        private void OnCancelButtonClicked(object sender, EventArgs e)
         {
-            await Navigation.PopModalAsync();
+           
+
+            //Navigation.PopModalAsync();
+
         }
     }
 }
