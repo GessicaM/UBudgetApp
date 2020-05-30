@@ -2,22 +2,39 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:local="clr-namespace:UBudgetApp"
              mc:Ignorable="d"
              x:Class="UBudgetApp.AddExpense">
+    
+    <ContentPage.BindingContext>
+        <local:AddExpenseViewModel>
+            
+        </local:AddExpenseViewModel>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
             <StackLayout Margin="50,50,50,50">
                 <!--Label Text="New Expense"-->
                 <!-- Place new controls here -->
-                <Entry Placeholder="Expense Name" FontSize="Medium" PlaceholderColor="Gray"/>
-                <Entry Placeholder="Amount in $USD" FontSize="Medium" PlaceholderColor="Gray"/>
-                <Label Text="Date of Purchase" FontSize="Medium"/>
+                <Entry Placeholder="Expense Name" 
+                       Text="{Binding Expense.Name}"
+                       FontSize="Medium" 
+                       PlaceholderColor="Gray"/>
+                <Entry Placeholder="Amount in $USD"
+                       FontSize="Medium" 
+                       Text="{Binding Expense.Amount}"
+                       PlaceholderColor="Gray"/>
+                <Label Text="Date of Purchase" 
+                       FontSize="Medium"/>
                 <DatePicker MinimumDate="01/01/2020" 
-                    MaximumDate="01/01/2021" />
+                            MaximumDate="01/01/2021" />
 
-                <Label Text="Select category" FontSize="Medium" />
-                <Picker x:Name="Categories" HorizontalOptions="FillAndExpand">
+                <Label Text="Select Category" 
+                       FontSize="Medium" />
+                <Picker x:Name="Categories"
+                        FontSize="Medium"
+                        HorizontalOptions="FillAndExpand">
                     <Picker.Items>
                         <x:String>FoodNDining</x:String>
                         <x:String>Entertainment</x:String>
@@ -33,8 +50,10 @@
                         <x:String>Miscellaneous</x:String>
                     </Picker.Items>
                 </Picker>
-                <Button Text="Save"  Clicked="OnSaveButtonClicked" />
-                <Button Text="Cancel" Clicked="OnCancelButtonClicked" />
+                <Button Text="Save" 
+                        Clicked="OnSaveButtonClicked" />
+                <Button Text="Cancel"
+                        Clicked="OnCancelButtonClicked" />
 
             </StackLayout>
 

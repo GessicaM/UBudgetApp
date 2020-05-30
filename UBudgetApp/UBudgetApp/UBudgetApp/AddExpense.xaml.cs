@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using UBudgetApp.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,7 +18,14 @@ namespace UBudgetApp
         }
         private void OnSaveButtonClicked(object sender, EventArgs e)
         {
-            //Navigation.PopModalAsync();
+            //To get the Expense
+            Expense expense = ((AddExpenseViewModel)BindingContext).Expense;
+
+           //To pass it to ExpenseListPage
+           MessagingCenter.Send(this, "AddExpense", expense);
+            
+            //To go back to ExpenseListpage 
+            Navigation.PopModalAsync();
 
 
         }
@@ -26,8 +33,8 @@ namespace UBudgetApp
         private void OnCancelButtonClicked(object sender, EventArgs e)
         {
            
-
-            //Navigation.PopModalAsync();
+            //To go back to ExpenseListpage
+            Navigation.PopModalAsync();
 
         }
     }
