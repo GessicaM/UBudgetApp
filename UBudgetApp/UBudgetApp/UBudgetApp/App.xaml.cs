@@ -11,7 +11,8 @@ namespace UBudgetApp
             InitializeComponent();
 
             //MainPage = new MainPage();
-            MainPage = new AddExpense();
+            //MainPage = new AddExpense();
+            MainPage = new AddBudgetPage();
         }
 
         protected override void OnStart()
