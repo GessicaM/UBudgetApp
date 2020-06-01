@@ -16,5 +16,10 @@ namespace UBudgetApp
         {
             InitializeComponent();
         }
+
+        private void AddExpenseButtonClicked(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new AddExpense());
+        }
     }
 }
