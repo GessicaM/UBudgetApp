@@ -7,41 +7,75 @@
              mc:Ignorable="d"
              x:Class="UBudgetApp.ExpenseListPage">
 
+
     <ContentPage.BindingContext>
-        <local:ExpenseListViewModel>
-            
-        </local:ExpenseListViewModel>
+        <local:ExpenseListViewModel></local:ExpenseListViewModel>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
-            <Button Text="Add Expense"  Clicked="AddExpenseButtonClicked"/>
-            
-            <ListView Margin="0,50,50,50" ItemsSource="{Binding Expenses}" >
+        <StackLayout >
+            <Button Text="Add Expense"                                              
+                        Clicked="AddExpenseButtonClicked"></Button>
+            <!--Button Text="Remove Expense" Command="{Binding RemoveExpenseCommand}"></>
+            <Button Text="Update Expense" Command="{Binding UpdateExpenseCommand}"></Button-->
 
+            <ListView ItemsSource="{Binding Expenses}" 
+                      SelectedItem="{Binding SelectedExpense}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="3*"/>
                                     <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="*"/>
+
                                 </Grid.ColumnDefinitions>
-                                <Label Text="{Binding Name}" 
-                                       Grid.Column="0"
-                                       FontSize="Medium"
-                                       FontAttributes="Bold"
-                                       VerticalTextAlignment="Start"></Label>
-                                <Label Text="{Binding Amount,StringFormat='${0}'}" 
-                                       FontSize="Medium"
-                                       Grid.Column="1"
-                                       FontAttributes="Bold"
-                                       VerticalTextAlignment="Start"></Label>
-                                
+                                <Label Text="{Binding ExpenseName}"
+                                           FontSize="Medium"
+                                           Grid.Column="2" 
+                                           FontAttributes="Bold" 
+                                           VerticalTextAlignment="Center"  ></Label>
+
+                                <Label Text="{Binding Amount,StringFormat='${0}'}"
+                                           FontSize="Medium"
+                                           Grid.Column="4"  
+                                           FontAttributes="Bold"
+                                           VerticalTextAlignment="Center"></Label>
+
+                                <Label Text="{Binding Category}" 
+                                           FontSize="Medium"
+                                           FontAttributes="Bold"
+                                           VerticalTextAlignment="Center"
+                                           Grid.Column="1"  ></Label>
+
+                                <!--Label x:Name="Label"  Text="{Binding Date,StringFormat=dd/MM/yyyy}"
+                                       Grid.Column="3"></-->
+
+
+                                <Image Source="{Binding PictureUrl}"
+                                           VerticalOptions="Start" 
+                                           HorizontalOptions="Start"
+                                           Grid.Column="0" ></Image>
+
+                                <!--Image Source="Assets/Icons/delete.jpg"
+                                           Grid.Column="5"-->
+                                <Image Source="trash1.jpg" Grid.Column="5">
+
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="RemoveTapGestureRecognizerTapped"
+                                                              CommandParameter="{Binding ExpenseId}"/>
+
+                                    </Image.GestureRecognizers>
+                                </Image>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
+
             </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
+
+
