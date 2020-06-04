@@ -7,10 +7,38 @@
              x:Class="UBudgetApp.MainPage">
 
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="TotalBudget" Text="Total Budget:" FontSize="27" Grid.Row="0" Grid.Column="0"/>
+        <ListView x:Name="listView" Grid.Row="0" Grid.Column="1" ItemSelected="OnListViewItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Text}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Label x:Name="TotalExpense" Text="Total Expense:" FontSize="27"  Grid.Row="1" Grid.Column="0"/>
+        <Label Text="" Grid.Row="1" Grid.Column="1"/>
+
+        <Label x:Name="Balresult" Text="Total Balance:" FontSize="20" Grid.Row="2" Grid.Column="0"/>
+            <Label Text="" Grid.Row="2" Grid.Column="1"/>
+
+        <Button x:Name="BtnAddBudget" Text="Add Budget" Grid.Row="3" Grid.Column="0" Clicked="BtnAddBudget_Clicked"/>
+        <Button x:Name="BtnExpList" Text="Expense List" Grid.Row="3" Grid.Column="1" Clicked="BtnExpList_Clicked"/>
+        <Button x:Name="BtnAddExp" Text="Add Expense" Grid.Row="4" Grid.Column="0" Clicked="BtnAddExp_Clicked"/>
+       
+
+
+    </Grid>
 </ContentPage>

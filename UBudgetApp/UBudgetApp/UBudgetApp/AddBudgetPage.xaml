@@ -15,16 +15,18 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
 
         </Grid.ColumnDefinitions>
 
         <Image Source="" BackgroundColor="LightSkyBlue"
-               Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="1"/>
+               Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"/>
 
-        <Editor Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="1"
-                Placeholder="Please set your budget, if you have not done so."/>
+        <Editor x:Name="SetBudget" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1"
+                Placeholder="Please set your budget, if you have not done so." Text="{Binding Text}" Keyboard="Numeric"/>
+        
 
-        <Button Grid.Row="2" Grid.Column="0" Text="Add Budget"/>
-
+        <Button x:Name="BtnAddBudget" Grid.Row="2" Grid.Column="0" Text="Add Budget" Clicked="BtnAddBudget_Clicked"/>
+        <Button x:Name="BtnDeleteBudget" Text="Delete" Grid.Row="2" Grid.Column="1" Clicked="BtnDeleteBudget_Clicked" />
     </Grid>
 </ContentPage>
