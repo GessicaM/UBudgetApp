@@ -12,16 +12,23 @@ namespace UBudgetApp
 
         public ObservableCollection<Expense> Expenses { get; set; }
 
-
+        public string ExpenseName { get; set; }
+        public string SelectedExpense { get; set; }
         //Constructor
 
         public ExpenseListViewModel()
         {
             Expenses = new ObservableCollection<Expense>();
 
-             MessagingCenter.Subscribe<AddExpense, Expense>(this, "AddExpense", (page, expense) =>
-             {
-                 Expenses.Add(expense);
+             MessagingCenter.Subscribe<AddExpense, Expense>(this, "AddExpense", 
+                 (page, expense) =>
+                 {
+                     if (expense.ExpenseId == 0)
+                     {
+                         expense.ExpenseId = Expenses.Count + 1;
+                         Expenses.Add(expense);
+
+                     }
 
              }
              );

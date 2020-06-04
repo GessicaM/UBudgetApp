@@ -4,47 +4,32 @@ using System.Text;
 
 namespace UBudgetApp.Model
 {
-    public enum ExpenseCategory
-    {
-        Entertainment,
-        Education,
-        Shopping,
-        PersonalCare,
-        HealthNFitness,
-        Kids,
-        FoodNDining,
-        Gifts,
-        Utilities,
-        AutoNTransport,
-        Travel,
-        Miscellaneous
-    }
     public class Expense
     {
-        public string Name { get; set; }
-        public string Filename { get; set; }
+        public int ExpenseId { get; set; }
+        public string ExpenseName { get; set; }
         public double Amount { get; set; }
+        public string Category { get; set; }
         public DateTime Date { get; set; }
-        public ExpenseCategory Category { get; set; }
+
+        public string PictureUrl { get; set; }
 
 
-
-        //Constructor
-        public Expense(string name, double amount, DateTime date, ExpenseCategory category)
+        public Expense(int expenseId, string expenseName, double amount, DateTime date,string category, string pictureUrl)
         {
-            Name = name;
+            ExpenseId = expenseId;
+            ExpenseName = expenseName;
             Amount = amount;
-            Date = date;
             Category = category;
+            Date = date;
+            PictureUrl = pictureUrl;
+
 
 
         }
+
         public Expense()
         {
-
         }
-
     }
-
-   
 }
