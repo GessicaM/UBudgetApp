@@ -12,6 +12,7 @@ namespace UBudgetApp
         public AddExpenseViewModel()
         {
             Expense = new Expense();
+            
 
         }
     }

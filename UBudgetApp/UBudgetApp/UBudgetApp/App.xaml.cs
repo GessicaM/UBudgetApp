@@ -15,6 +15,7 @@ namespace UBudgetApp
             //MainPage = new AddExpense();
             //MainPage = new AddBudgetPage();
           
+            MainPage = new ExpenseListPage();
         }
 
         protected override void OnStart()
