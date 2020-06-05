@@ -13,7 +13,9 @@ namespace UBudgetApp
             //MainPage = new MainPage();
 
             //MainPage = new AddExpense();
-            MainPage = new AddBudgetPage();
+            //MainPage = new AddBudgetPage();
+            MainPage = new ExpenseListPage();
+
           
         }
 
