@@ -18,7 +18,7 @@
             <!--Button Text="Remove Expense" Command="{Binding RemoveExpenseCommand}"></>
             <Button Text="Update Expense" Command="{Binding UpdateExpenseCommand}"></Button-->
 
-            <ListView ItemsSource="{Binding Expenses}" 
+            <ListView ItemsSource="{Binding Expenses}" x:Name="listView" ItemSelected="listView_ItemSelected"
                       SelectedItem="{Binding SelectedExpense}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -60,14 +60,12 @@
 
                                 <!--Image Source="Assets/Icons/delete.jpg"
                                            Grid.Column="5"-->
-                                <Image Source="trash1.jpg" Grid.Column="5">
-
+                                <!--<Image Source="trash1.jpg" Grid.Column="5">
                                     <Image.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="RemoveTapGestureRecognizerTapped"
                                                               CommandParameter="{Binding ExpenseId}"/>
-
                                     </Image.GestureRecognizers>
-                                </Image>
+                                </Image>-->
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
