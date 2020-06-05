@@ -21,10 +21,9 @@
         <Image Source="" BackgroundColor="LightSkyBlue"
                Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="1"/>
 
-        <Editor Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="1"
-                Placeholder="Please set your budget, if you have not done so."/>
+        <Entry Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="1" x:Name="BudgetAmountEntry" Keyboard="Numeric"
+                Placeholder="Amount in $USD"/>
 
-        <Button Grid.Row="2" Grid.Column="0" Text="Add Budget"/>
-
+        <Button Grid.Row="2" Grid.Column="0" Text="Add Budget" Clicked="SaveBudgetButton_Clicked"/>
     </Grid>
 </ContentPage>

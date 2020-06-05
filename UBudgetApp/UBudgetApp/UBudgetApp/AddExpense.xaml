@@ -18,7 +18,7 @@
                    PlaceholderColor="Gray"/>
 
             <Entry Placeholder="Amount in $USD" x:Name="AmountEntry"
-                   Text="{Binding Expense.Amount}"
+                   Text="{Binding Amount}"
                    FontSize="Medium"
                    PlaceholderColor="Gray"/>
 
@@ -34,7 +34,7 @@
             <Picker  x:Name="CategoryPicker"
                         FontSize="Medium"
                         HorizontalOptions="FillAndExpand"
-                    SelectedItem="{Binding Expense.Category}" >
+                    SelectedItem="{Binding Category}" >
                 <Picker.Items>
                     <x:String>Eating Out</x:String>
                     <x:String>Entertainment</x:String>
