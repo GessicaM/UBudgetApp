@@ -39,14 +39,14 @@ namespace UBudgetApp
             {
                 MessageStack.IsVisible = (budgets[0].BudgetAmount <= 0) ? true : false;
                 BudgetView.IsVisible = (budgets[0].BudgetAmount <= 0) ? false : true;
-                AddExpenseButton.IsVisible = (budgets[0].BudgetAmount <= 0) ? false : true;
+                //AddExpenseButton.IsVisible = (budgets[0].BudgetAmount <= 0) ? false : true;
                 ExpenseListButton.IsVisible = (budgets[0].BudgetAmount <= 0) ? false : true;
             }
             else
             {
                 MessageStack.IsVisible = true;
                 BudgetView.IsVisible = false;
-                AddExpenseButton.IsVisible = false;
+                //AddExpenseButton.IsVisible = false;
                 ExpenseListButton.IsVisible = false;
             }
             BudgetView.ItemsSource = budgets.ToList();

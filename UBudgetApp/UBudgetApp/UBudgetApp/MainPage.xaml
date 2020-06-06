@@ -41,8 +41,8 @@
                 <Label Text="No budget found. Please set a budget" x:Name="Message" FontSize="22" HorizontalTextAlignment="Center"/>
             </StackLayout>
             <Button Text="Set/Edit Budget" x:Name="SetBudgetButton" Clicked="SetBudgetButton_Clicked"/>
-            <Button x:Name="AddExpenseButton" Text="Add Expense" Clicked="AddExpenseButton_Clicked"/>
-            <Button x:Name="ExpenseListButton" Text="Expense List" Clicked="ExpenseListButton_Clicked"/>
+            <!--<Button x:Name="AddExpenseButton" Text="Add Expense" Clicked="AddExpenseButton_Clicked"/>-->
+            <Button x:Name="ExpenseListButton" Text="Add/View Expenses" Clicked="ExpenseListButton_Clicked"/>
         </StackLayout>
     </StackLayout>
 </ContentPage>

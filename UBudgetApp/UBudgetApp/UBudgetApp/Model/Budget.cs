@@ -11,8 +11,7 @@ namespace UBudgetApp.Model
         public string BudgetFile { get; set; }
         public double BudgetAmount { get; set; }
         public double TotalExpenses { get; set; } = SumExpenses();
-        public double RemainingBudget { get; set; } = Convert.ToDouble(File.ReadLines(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                    "budget.txt")).First()) - SumExpenses();
+        public double RemainingBudget { get; set; } = ChooseBudget();
         public static double SumExpenses(){
             //listStart
             double totalExpenses = 0;
@@ -36,6 +35,18 @@ namespace UBudgetApp.Model
             //listView.ItemsSource = expenses.ToList();
             //listEnd
             return totalExpenses;
+        }
+
+        public static double ChooseBudget()
+        {
+            double remBudget = 0;
+            if (File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                    "budget.txt")))
+            {
+                remBudget = Convert.ToDouble(File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                    "budget.txt"))) - SumExpenses();
+            }
+            return remBudget;
         }
     }
 
