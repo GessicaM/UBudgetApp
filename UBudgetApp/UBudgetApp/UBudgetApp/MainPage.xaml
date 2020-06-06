@@ -9,16 +9,28 @@
 
     <StackLayout>
         <StackLayout x:Name="TotalBudgetStack">
-            <ListView x:Name="BudgetView" ItemSelected="BudgetView_ItemSelected" >
+            <ListView x:Name="BudgetView" RowHeight="175" SelectionMode="None">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="model:Budget">
                         <ViewCell>
                             <Grid>
-                                <Label Text="Total Budget" Margin="10,0,0,0"
+                                <Label Text="Total Budget: " Margin="10,0,0,0"
                                        FontSize="Large"
                                        FontAttributes="None"
                                        VerticalTextAlignment="Center" />
                                 <Label Text="{Binding BudgetAmount}" Margin="0,0,10,0"
+                                       FontSize="Large" Grid.Column="1" FontAttributes="None" VerticalTextAlignment="Center" HorizontalTextAlignment="End" />
+                                <Label Text="Total Expenses: " Margin="10,0,0,0"
+                                       FontSize="Large" Grid.Row="1"
+                                       FontAttributes="None"
+                                       VerticalTextAlignment="Center" />
+                                <Label Text="{Binding TotalExpenses}" Margin="0,0,10,0" Grid.Row="1"
+                                       FontSize="Large" Grid.Column="1" FontAttributes="None" VerticalTextAlignment="Center" HorizontalTextAlignment="End" />
+                                <Label Text="Remainaing Budget: " Margin="10,0,0,0"
+                                       FontSize="Large" Grid.Row="2"
+                                       FontAttributes="None"
+                                       VerticalTextAlignment="Center" />
+                                <Label Text="{Binding RemainingBudget}" Margin="0,0,10,0" Grid.Row="2"
                                        FontSize="Large" Grid.Column="1" FontAttributes="None" VerticalTextAlignment="Center" HorizontalTextAlignment="End" />
                             </Grid>
                         </ViewCell>
@@ -26,9 +38,9 @@
                 </ListView.ItemTemplate>
             </ListView>
             <StackLayout x:Name="MessageStack" VerticalOptions="CenterAndExpand">
-                <Label Text="Please set a budget" x:Name="Message" FontSize="Large" HorizontalTextAlignment="Center"/>
-                <Button Text="Set Budget" x:Name="SetBudgetButton" Clicked="SetBudgetButton_Clicked"/>
+                <Label Text="No budget found. Please set a budget" x:Name="Message" FontSize="22" HorizontalTextAlignment="Center"/>
             </StackLayout>
+            <Button Text="Set/Edit Budget" x:Name="SetBudgetButton" Clicked="SetBudgetButton_Clicked"/>
             <Button x:Name="AddExpenseButton" Text="Add Expense" Clicked="AddExpenseButton_Clicked"/>
             <Button x:Name="ExpenseListButton" Text="Expense List" Clicked="ExpenseListButton_Clicked"/>
         </StackLayout>
