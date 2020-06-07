@@ -64,6 +64,11 @@ namespace UBudgetApp
                 });
             }
         }
+
+        private async void BackButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync();
+        }
     }
 }
 

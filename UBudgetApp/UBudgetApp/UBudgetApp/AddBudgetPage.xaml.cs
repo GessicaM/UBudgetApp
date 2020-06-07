@@ -36,9 +36,9 @@ namespace UBudgetApp
             await Navigation.PopModalAsync();
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void CancelButton_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PopModalAsync();
         }
     }
 }

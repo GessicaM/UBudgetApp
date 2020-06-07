@@ -13,8 +13,8 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout >
-            <Button Text="Add Expense"                                              
-                        Clicked="AddExpenseButtonClicked"></Button>
+            <Button Text="Back" Clicked="BackButton_Clicked" />
+            <Button Text="Add Expense"  Clicked="AddExpenseButtonClicked"></Button>
             <!--Button Text="Remove Expense" Command="{Binding RemoveExpenseCommand}"></>
             <Button Text="Update Expense" Command="{Binding UpdateExpenseCommand}"></Button-->
 
@@ -70,7 +70,7 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
+            </ListView>            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

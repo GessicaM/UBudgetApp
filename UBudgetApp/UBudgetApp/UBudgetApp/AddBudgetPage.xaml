@@ -5,25 +5,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="UBudgetApp.AddBudgetPage">
-
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height=".5*"/>
-            <RowDefinition Height="2*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-
-        </Grid.ColumnDefinitions>
-
-        <Image Source="" BackgroundColor="LightSkyBlue"
-               Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="1"/>
-
+    
+    <StackLayout Margin="0,30,0,0">
+        <Label Text="Please enter your desired budget amount" FontSize="22" />
         <Entry Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="1" x:Name="BudgetAmountEntry" Keyboard="Numeric"
-                Placeholder="Amount in $USD"/>
-
-        <Button Grid.Row="2" Grid.Column="0" Text="Add Budget" Clicked="SaveBudgetButton_Clicked"/>
-    </Grid>
+                Placeholder="Amount in USD" FontSize="Large" />
+        <Button Text="Save" Clicked="SaveBudgetButton_Clicked"/>
+        <Button Text="Cancel" Clicked="CancelButton_Clicked" />
+    </StackLayout>
 </ContentPage>
