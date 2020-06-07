@@ -19,19 +19,19 @@
                                        FontSize="Large"
                                        FontAttributes="Bold"
                                        VerticalTextAlignment="Center" />
-                                <Label Text="{Binding BudgetAmount, StringFormat='${0}'}" Margin="0,0,10,0"
+                                <Label Text="{Binding BudgetAmount, StringFormat='$ {0}'}" Margin="0,0,10,0"
                                        FontSize="Large" Grid.Column="1" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="End" />
                                 <Label Text="Total Expenses: " Margin="10,0,0,0"
                                        FontSize="Large" Grid.Row="1"
                                        FontAttributes="Bold"
                                        VerticalTextAlignment="Center" />
-                                <Label Text="{Binding TotalExpenses, StringFormat='${0}'}" Margin="0,0,10,0" Grid.Row="1"
+                                <Label Text="{Binding TotalExpenses}" Margin="0,0,10,0" Grid.Row="1"
                                        FontSize="Large" Grid.Column="1" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="End" />
                                 <Label Text="Balance: " Margin="10,0,0,0"
                                        FontSize="Large" Grid.Row="2"
                                        FontAttributes="Bold"
                                        VerticalTextAlignment="Center" />
-                                <Label Text="{Binding RemainingBudget, StringFormat='${0}'}" Margin="0,0,10,0" Grid.Row="2"
+                                <Label Text="{Binding RemainingBudget}" Margin="0,0,10,0" Grid.Row="2"
                                        FontSize="Large" Grid.Column="1" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="End" />
                             </Grid>
                         </ViewCell>
