@@ -85,7 +85,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\bb.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UBudgetApp\UBudgetApp.csproj">
       <Project>{AF9DABC3-1C0A-48A6-BB0C-9FADA90D13B4}</Project>
